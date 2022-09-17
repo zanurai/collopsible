@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: lightslategray;
+}
+
+.accordion {
+    background: wheat;
+    width: 40%;
+    padding: 50px;
+    margin: 100px;
+    border: 2px solid black;
+    display: flex;
+
+}
+
+.accodion-tab label {
+    background: linear-gradient(lightgreen, lightpink);
+    display: block;
+    padding: 20px;
+
+    cursor: pointer;
+    position: relative;
+
+}
+
+.accodion-tab label:after {
+    content: "\f078";
+    font-family: fontawesome;
+    position: absolute;
+    right: 30px;
+    transform: rotate(90deg);
+    transition: 1s;
+}
+
+.accodion-tab .accordion-toggle {
+    display: none;
+
+}
+
+.accodion-tab .accordion-contant {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 1s;
+
+}
+
+
+.accodion-tab .accordion-contant {
+    line-height: 20px;
+}
+
+.accodion-tab .accordion-toggle:checked~label:after {
+    transform: rotate(0deg);
+}
+
+
+.accodion-tab .accordion-toggle:checked~.accordion-contant {
+    max-height: 100vh;
+    padding: 20px;
+
+}
